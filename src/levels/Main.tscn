@@ -30,28 +30,28 @@ __meta__ = {
 "_edit_vertical_guides_": [ 495.0 ]
 }
 
-[node name="PixelColumns" type="HBoxContainer" parent="."]
+[node name="PixelColumnContainer" type="HBoxContainer" parent="."]
 margin_left = 640.0
 margin_top = 160.0
 margin_right = 856.0
 margin_bottom = 200.0
 custom_constants/separation = 1
 
-[node name="PixelColumn0" parent="PixelColumns" instance=ExtResource( 3 )]
+[node name="PixelColumn0" parent="PixelColumnContainer" instance=ExtResource( 3 )]
 
-[node name="PixelColumn1" parent="PixelColumns" instance=ExtResource( 3 )]
+[node name="PixelColumn1" parent="PixelColumnContainer" instance=ExtResource( 3 )]
 margin_left = 41.0
 margin_right = 81.0
 
-[node name="PixelColumn2" parent="PixelColumns" instance=ExtResource( 3 )]
+[node name="PixelColumn2" parent="PixelColumnContainer" instance=ExtResource( 3 )]
 margin_left = 82.0
 margin_right = 122.0
 
-[node name="PixelColumn3" parent="PixelColumns" instance=ExtResource( 3 )]
+[node name="PixelColumn3" parent="PixelColumnContainer" instance=ExtResource( 3 )]
 margin_left = 123.0
 margin_right = 163.0
 
-[node name="PixelColumn4" parent="PixelColumns" instance=ExtResource( 3 )]
+[node name="PixelColumn4" parent="PixelColumnContainer" instance=ExtResource( 3 )]
 margin_left = 164.0
 margin_right = 204.0
 

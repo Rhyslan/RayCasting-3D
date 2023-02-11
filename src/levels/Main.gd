@@ -4,14 +4,14 @@ extends Node2D
 # Variables
 var notWall = Color(0, 0, 0, 0)
 
-onready var pixelColumnContainer = $PixelColumns
-onready var column = get_node("res://src/PixelColumn0.tscn")
+onready var pixelColumnContainer = $PixelColumnContainer
+var column = preload("res://src/PixelColumn0.tscn")
 
 
 # Functions
 func _ready():
 	for _x in range(GlobalVars.rayCount):
-		pixelColumnContainer.add_child(column)
+		pixelColumnContainer.add_child(column.instance(), true)
 
 
 func _physics_process(_delta):

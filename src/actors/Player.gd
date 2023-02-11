@@ -12,7 +12,7 @@ var playerY = self.position.y
 var velocity = Vector2()
 
 onready var rayContainer = $RayContainer
-onready var rayCast = get_node("res://src/Ray0.tscn")
+var rayCast = preload("res://src/Ray0.tscn")
 
 signal ray_collision
 
@@ -27,7 +27,7 @@ func _ready():
 	playerY = self.position.y
 	
 	for _x in range(GlobalVars.rayCount):
-		rayContainer.add_child(rayCast)
+		rayContainer.add_child(rayCast.instance(), true)
 
 
 
