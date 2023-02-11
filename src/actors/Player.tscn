@@ -16,18 +16,18 @@ texture = ExtResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Rays" type="Node2D" parent="."]
+[node name="RayContainer" type="Node2D" parent="."]
 
-[node name="Ray0" parent="Rays" instance=ExtResource( 3 )]
+[node name="Ray0" parent="RayContainer" instance=ExtResource( 3 )]
 rotation = -0.523599
 
-[node name="Ray1" parent="Rays" instance=ExtResource( 3 )]
+[node name="Ray1" parent="RayContainer" instance=ExtResource( 3 )]
 rotation = -0.261799
 
-[node name="Ray2" parent="Rays" instance=ExtResource( 3 )]
+[node name="Ray2" parent="RayContainer" instance=ExtResource( 3 )]
 
-[node name="Ray3" parent="Rays" instance=ExtResource( 3 )]
+[node name="Ray3" parent="RayContainer" instance=ExtResource( 3 )]
 rotation = 0.261799
 
-[node name="Ray4" parent="Rays" instance=ExtResource( 3 )]
+[node name="Ray4" parent="RayContainer" instance=ExtResource( 3 )]
 rotation = 0.523599

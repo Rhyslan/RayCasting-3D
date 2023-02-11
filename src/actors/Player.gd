@@ -11,6 +11,9 @@ var playerY = self.position.y
 
 var velocity = Vector2()
 
+onready var rayContainer = $RayContainer
+onready var rayCast = get_node("res://src/Ray0.tscn")
+
 signal ray_collision
 
 
@@ -23,6 +26,9 @@ func _ready():
 	playerX = self.position.x
 	playerY = self.position.y
 	
+	for _x in range(GlobalVars.rayCount):
+		rayContainer.add_child(rayCast)
+
 
 
 func _physics_process(delta):
@@ -54,19 +60,27 @@ func movement(delta):
 
 
 func rays():
-	GlobalVars.rayColl.resize($Rays.get_child_count())
-	GlobalVars.rayDist.resize($Rays.get_child_count())
+	# Set default size
+	GlobalVars.rayColl.resize(rayContainer.get_child_count())
+	GlobalVars.rayDist.resize(rayContainer.get_child_count())
+	GlobalVars.rayCollider.resize(rayContainer.get_child_count())
 	
-	for x in $Rays.get_child_count():
+	# Set default values
+	for x in rayContainer.get_child_count():
 		GlobalVars.rayDist[x] = 1
+		GlobalVars.rayCollider[x] = "Empty"
 	
-	for x in $Rays.get_child_count():
-		var ray = get_node("Rays/Ray%s" % x)
+	# Loop through children of $Rays to detect collisions and set appropriate values as well as trigger the Main scene to draw the pixel columns
+	for x in rayContainer.get_child_count():
+		var ray = get_node("RayContainer/Ray%s" % x)
 		if ray.is_colliding():
 			GlobalVars.rayColl[x] = "1"
 			GlobalVars.rayDist[x] = self.position.distance_to(ray.get_collision_point()) * cos(ray.rotation)
+			GlobalVars.rayCollider[x] = ray.get_collider()
 			emit_signal("ray_collision")
+			#print(ray.get_collider())
 		else:
 			GlobalVars.rayColl[x] = "0"
 			GlobalVars.rayDist[x] = 1
+			GlobalVars.rayCollider[x] = "Empty"
 			emit_signal("ray_collision")
