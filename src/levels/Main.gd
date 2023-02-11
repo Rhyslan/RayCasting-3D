@@ -5,7 +5,7 @@ extends Node2D
 var notWall = Color(0, 0, 0, 0)
 
 onready var pixelColumnContainer = $PixelColumns
-onready var column = get_node("res:/../../src/PixelColumn0.tscn")
+onready var column = get_node("res://src/PixelColumn0.tscn")
 
 
 # Functions
