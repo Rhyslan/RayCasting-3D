@@ -5,10 +5,10 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_top = 19.0
-margin_right = 40.0
+margin_top = 20.0
+margin_right = 48.0
 margin_bottom = 20.0
 grow_horizontal = 2
-rect_min_size = Vector2( 40, 1 )
+rect_min_size = Vector2( 48, 0 )
 size_flags_horizontal = 12
 size_flags_vertical = 2

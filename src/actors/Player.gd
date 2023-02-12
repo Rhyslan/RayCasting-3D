@@ -4,7 +4,7 @@ extends KinematicBody2D
 # Variables
 
 const ROTATION_SPEED = 200
-const SPEED = 200
+const SPEED = 50
 
 var playerX = self.position.x
 var playerY = self.position.y
@@ -26,8 +26,15 @@ func _ready():
 	playerX = self.position.x
 	playerY = self.position.y
 	
-	for _x in range(GlobalVars.rayCount):
+	var startingAngle = -(GlobalVars.playerFOV / 2)
+	for _x in GlobalVars.rayCount:
 		rayContainer.add_child(rayCast.instance(), true)
+	
+	var increment = GlobalVars.playerFOV / (rayContainer.get_child_count() - 1)
+	
+	for x in rayContainer.get_child_count():
+		rayContainer.get_child(x).rotation_degrees = startingAngle
+		startingAngle += increment
 
 
 

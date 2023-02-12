@@ -5,6 +5,7 @@ var rayColl = []
 var rayCollider = []
 var rayDist = []
 
-var rayCount = 5
+var rayCount = 37
+var playerFOV = 80
 
-var wallColours = {"VerticalWalls:[TileMap:1341]" : "ffffff", "HorizontalWalls:[TileMap:1330]" : "a8a8a8", "Empty" : "000000"}
+var wallColours = {"VerticalWalls:[TileMap:1348]" : "ffffff", "HorizontalWalls:[TileMap:1337]" : "a8a8a8", "Empty" : "000000"}
