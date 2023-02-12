@@ -4,7 +4,7 @@ extends KinematicBody2D
 # Variables
 
 const ROTATION_SPEED = 200
-const SPEED = 50
+const SPEED = 200
 
 var playerX = self.position.x
 var playerY = self.position.y
