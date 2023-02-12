@@ -73,7 +73,7 @@ S: Backwards
 A: Turn Left
 D: Turn Right
 Q/Left Arrow: Strafe Left
-Escape: Close Game
-E/Right Arrow: Strafe Right"
+E/Right Arrow: Strafe Right
+Escape: Close Game"
 
 [connection signal="ray_collision" from="Player" to="." method="_on_Player_ray_collision"]
