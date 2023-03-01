@@ -85,7 +85,6 @@ func rays():
 			GlobalVars.rayDist[x] = self.position.distance_to(ray.get_collision_point()) * cos(ray.rotation)
 			GlobalVars.rayCollider[x] = ray.get_collider()
 			emit_signal("ray_collision")
-			#print(ray.get_collider())
 		else:
 			GlobalVars.rayColl[x] = "0"
 			GlobalVars.rayDist[x] = 1
